@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         // Replace 'your-dockerhub-username' with your actual Docker Hub username
-        DOCKER_IMAGE = 'your-dockerhub-username/spring-app'
+        DOCKER_IMAGE = 'mhmk277/spring-app'
         // This must match the credential ID you created for Docker Hub in Jenkins
         DOCKER_CREDENTIALS = 'docker-hub'
     }
@@ -19,7 +19,7 @@ pipeline {
         stage('Checkout Code') {
             steps {
                 // Replace 'https://github.com/user/repo.git' with your actual GitHub URL
-                git branch: 'main', url: 'https://github.com/user/repo.git'
+                git branch: 'main', url: 'https://github.com/Mhmdkbz/Devsecops.git'
             }
         }
 
