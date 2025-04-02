@@ -1,24 +1,29 @@
 pipeline {
     agent any
+
     environment {
-        DOCKER_IMAGE = 'your-dockerhub-username/spring-app'
+        DOCKER_IMAGE = 'mohamad/spring-app'
         DOCKER_CREDENTIALS = 'docker-hub'
     }
+
     tools {
         maven 'Maven-3.8.1'
         jdk 'JDK-17'
     }
+
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/yourusername/yourrepo.git'
+                git branch: 'main', url: 'https://github.com/Mhmdkbz/Devsecops'
             }
         }
+
         stage('Build Application') {
             steps {
                 sh 'mvn clean package -DskipTests'
             }
         }
+
         stage('Build Docker Image') {
             steps {
                 script {
@@ -26,6 +31,7 @@ pipeline {
                 }
             }
         }
+
         stage('Push to Docker Hub') {
             steps {
                 script {
