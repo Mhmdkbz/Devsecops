@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = 'mohamad/spring-app'
+        DOCKER_IMAGE = 'mhmk277/spring-app'
         DOCKER_CREDENTIALS = 'docker-hub'
     }
 
@@ -14,7 +14,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/Mhmdkbz/Devsecops'
+                git branch: 'main', url: 'https://github.com/Mhmdkbz/Devsecops.git'
             }
         }
 
