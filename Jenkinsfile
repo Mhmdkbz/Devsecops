@@ -1,1 +1,10 @@
-pipeline { /* your pipeline code */ }
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                sh 'echo "Building..."'
+            }
+        }
+    }
+}
