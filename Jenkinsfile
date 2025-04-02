@@ -1,0 +1,1 @@
+pipeline { /* your pipeline code */ }
